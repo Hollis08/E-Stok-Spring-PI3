@@ -5,8 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.util.Date;
+import java.time.LocalDate;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Data
@@ -22,6 +23,9 @@ public class Produto {
     private String nome;
     private double valor;
     private String categoria;
-    private Date validade;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate validade;
+    
     private int quantidade; 
 }

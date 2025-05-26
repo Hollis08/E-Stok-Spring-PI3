@@ -16,37 +16,39 @@
         <a href="/produto-lista" class="btn btn-primary mx-5 mt-2">Lista de Produtos</a>
     </div>
     <div id="formCadastro" class="container mt-5">
-        <form id="formProduto" method="post" action="@{/gravar}" class="mx-auto mt-3" style="max-width: 600px;">
+        <form id="formProduto" method="post" th:action="@{/gravar}"  class="mx-auto mt-3" style="max-width: 600px;">
             <div class="row mb-3">
                 <div class="col-md-6">
+                    <input type="hidden" th:field="${produto.id}"/>
+                    <span>ID:<span th:text="${produto.id}"></span></span>
                     <label for="codigoProduto" class="form-label">Código do produto:</label>
-                    <input type="text" id="codigoProduto" class="form-control" placeholder="Código"/>
+                    <input type="text" th:field="${produto.codigo}" class="form-control" placeholder="Código"/>
                 </div>
                 <div class="col-md-6">
                     <label for="nomeProduto" class="form-label">Nome:</label>
-                    <input type="text" id="nomeProduto" class="form-control" placeholder="Nome"/>
+                    <input type="text" th:field="${produto.nome}" class="form-control" placeholder="Nome"/>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="valorProduto" class="form-label">Valor:</label>
-                    <input type="number" id="valorProduto" class="form-control" placeholder="Valor"/>
+                    <input type="number" th:field="${produto.valor}" class="form-control" placeholder="Valor"/>
                 </div>
                 <div class="col-md-6">
                     <label for="categoriaProduto" class="form-label">Categoria:</label>
-                    <input type="text" id="categoriaProduto" class="form-control" placeholder="Categoria" />
+                    <input type="text" th:field="${produto.categoria}" class="form-control" placeholder="Categoria" />
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="validadeProduto" class="form-label">Validade:</label>
-                    <input type="text" id="validadeProduto" class="form-control" placeholder="Validade"/>
+                    <input type="date" th:field="${produto.validade}" class="form-control" placeholder="Validade"/>
                 </div>
                 <div class="col-md-6">
                     <label for="quantidadeProduto" class="form-label">Quantidade:</label>
-                    <input type="number" id="quantidadeProduto" class="form-control" placeholder="Quantidade"/>
+                    <input type="number" th:field="${produto.quantidade}" class="form-control" placeholder="Quantidade"/>
                 </div>
             </div>
 
@@ -57,6 +59,5 @@
             </div>
         </form>
     </div>
-    <script th:src="@{/js/cadastro-script.js}"></script>
 </body>
 </html>

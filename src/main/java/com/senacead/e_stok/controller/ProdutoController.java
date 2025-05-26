@@ -21,10 +21,10 @@ public class ProdutoController {
         return "produto-cadastro";
     }
     
-    @PostMapping("gravar")
+    @PostMapping("/gravar")
     public String processarFormulario(@ModelAttribute Produto produto){
         produtoService.salvar(produto);
-        return "redirect:/produto-lista";
+        return "redirect:/produto-cadastro";
     }
     
     @GetMapping("/produto-lista")
@@ -39,7 +39,8 @@ public class ProdutoController {
         return "produto-cadastro";
     }
     
-    @GetMapping("excluir/{id}")
+    
+    @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable int id){
         produtoService.excluir(id);
         return "redirect:/produto-lista";
