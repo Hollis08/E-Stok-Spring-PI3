@@ -13,17 +13,20 @@
         </div>
         <div id="divLogin" class="container mt-5">
         <div class="d-flex justify-content-center align-items-center" style="margin-top: 5%;">
-            <form id="formUsuario" method="post" action="">
+            <form id="formUsuario" method="post" th:action="@{/login}">
                 <div class="mb-3">
                     <label for="nome">Usuário:</label>
-                    <input type="text" id="nome" class="form-control" placeholder="Usuário">
+                    <input type="text" th:field="${usuario.nome}" class="form-control" placeholder="Usuário">
                 </div>
                 <div class="mb-3 ">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" class="form-control" placeholder="Senha">
+                    <input type="password" th:field="${usuario.senha}"class="form-control" placeholder="Senha">
                 </div>
                 <div class="mb-3 d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary" style="width: 60%;" >Entrar</button>
+                </div>
+                <div th:if="${erro}" style="color: red; font-weight: bold;">
+                    <p th:text="${erro}"></p>
                 </div>
             </form>
         </div>
