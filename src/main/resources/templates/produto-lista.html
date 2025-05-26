@@ -16,13 +16,29 @@
         <a href="/produto-cadastro" class="btn btn-primary mx-5 mt-2">Cadastro de Produtos</a>
     </div>
         <div class="container my-5">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h3 class="mb-0">Lista de Produtos</h3>
-            </div>
-        
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="mb-0">Lista de Produtos</h3>
+    </div>
 
-            <div id="produtos" class="list-group"></div>
+    <div id="produtos" class="list-group">
+        <div th:each="produto : ${produtos}" class="list-group-item">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong th:text="${produto.nome}">Nome do Produto</strong><br>
+                    <span th:text="'Código: ' + ${produto.codigo}">Código</span><br>
+                    <span th:text="'Categoria: ' + ${produto.categoria}">Categoria</span><br>
+                    <span th:text="'Valor: R$ ' + ${produto.valor}">Valor</span><br>
+                    <span th:text="'Validade: ' + ${produto.validade}">Validade</span><br>
+                    <span th:text="'Quantidade: ' + ${produto.quantidade}">Quantidade</span>
+                </div>
+                <div>
+                    <a th:href="@{'/produto-alterar/' + ${produto.id}}" class="btn btn-warning btn-sm">Alterar</a>
+                    <a th:href="@{'/excluir/' + ${produto.id}}" class="btn btn-danger btn-sm">Excluir</a>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
         
         <script th:src="@{/js/index-script.js}"></script>
     </body>

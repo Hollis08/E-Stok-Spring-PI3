@@ -15,7 +15,7 @@ public class SiteController {
     public String paginaInicial(){
         return "pagina-inicial";
     }
-    
+    /*
     @GetMapping("/produto-cadastro")
     public String produtoCadastro(){
         return "produto-cadastro";
@@ -25,5 +25,6 @@ public class SiteController {
     public String produtoLista(){
         return "produto-lista";
     }
+  */
     
 }
