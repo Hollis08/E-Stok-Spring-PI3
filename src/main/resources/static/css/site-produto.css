@@ -1,0 +1,28 @@
+#banner{
+    border: 2px, solid, gray; 
+    background-color: #39B872;
+}
+
+#formCadastro {
+    border: 1px solid gray;
+    width: auto;
+    max-width: 700px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+body{
+    background-color: #85B59B;
+}
+
+label{
+    text-transform: capitalize;
+}
+
+#divLogin{
+    background-color: white;
+    border: 1px solid gray;
+    width: auto;
+    max-width: 300px;
+    border-radius: 5px;
+}
